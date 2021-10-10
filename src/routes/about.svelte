@@ -46,27 +46,8 @@
 </script>
 
 <PageHeader
-    title="Hey! I am Cris."
-    description="I create custom websites to help businesses to their standards"
+    title="About"
+    description="Brief Introduction Of Myself"
 >
-    <div class="mt-5">
-        <button class="btn btn-sm btn-primary">View CV</button>
-        <button class="btn btn-sm btn-primary">Get In Touch</button>
-    </div>
 </PageHeader>
 
-
-
-<section class="py-6">
-    <div class="container">
-        <h2 on:click={toggle} class="cursor-pointer text-4xl text-center text-primary">Skills</h2>
-        <div class="grid gap-x-16 grid-cols-1 md:grid-cols-2 px-5 w-full mt-10">
-            {#each configs as c (c)}
-                <div animate:flip>
-                    <Skillbars {...c} />
-                </div>
-            {/each}
-        </div>
-    </div>
-
-</section>

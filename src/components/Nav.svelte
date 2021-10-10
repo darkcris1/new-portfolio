@@ -22,45 +22,48 @@
     ];
 </script>
 
-<div class="fixed top-0 container mx-auto w-full navbar shadow-lg bg-neutral text-neutral-content mb-0">
-    <div class="flex-1 px-2 mx-2">
-        <a href="/" class="text-lg font-bold">
-            Cr<span class="text-primary">is...</span>
-        </a>
-    </div>
-    <div class="flex-none hidden px-2 mx-2 lg:flex">
-        <div class="flex items-stretch">
-            {#each navigations as nav}
-                <a
-                    href={nav.href}
-                    class:bg-primary={$page.path === nav.href}
-                    class="btn btn-ghost btn-sm rounded-btn"
+<div class="fixed top-0 mx-auto w-full navbar shadow-lg bg-neutral text-neutral-content mb-0">
+    <div class="container">
+        <div class="flex-1 px-2 mx-2">
+            <a href="/" class="text-lg font-bold">
+                Cr<span class="text-primary">is...</span>
+            </a>
+        </div>
+        <div class="flex-none hidden px-2 mx-2 lg:flex">
+            <div class="flex items-stretch">
+                {#each navigations as nav}
+                    <a
+                        href={nav.href}
+                        class:bg-primary={$page.path === nav.href}
+                        class="btn btn-ghost btn-sm rounded-btn"
+                    >
+                        {nav.text}
+                    </a>
+                {/each}
+            </div>
+        </div>
+        <div class="flex-none lg:hidden">
+            <button
+                on:click={() => (show = !show)}
+                class="btn btn-square btn-ghost"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current"
                 >
-                    {nav.text}
-                </a>
-            {/each}
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
+                </svg>
+            </button>
         </div>
     </div>
-    <div class="flex-none lg:hidden">
-        <button
-            on:click={() => (show = !show)}
-            class="btn btn-square btn-ghost"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-current"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                />
-            </svg>
-        </button>
-    </div>
+  
 </div>
 
 {#if show}

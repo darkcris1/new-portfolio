@@ -4,7 +4,5 @@
     import "../scss/style.scss";
 </script>
 
-<div class="container mx-auto">
-    <Nav />
+<Nav />
     <slot />
-</div>
