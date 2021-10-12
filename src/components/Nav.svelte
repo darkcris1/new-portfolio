@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
     import { page } from "$app/stores";
+    import { onMount } from "svelte";
     import { fade, fly } from "svelte/transition";
     let show = false;
     const navigations = [
@@ -20,12 +21,43 @@
             href: "/contact",
         },
     ];
+
+    let isNav = false;
+    let nav: HTMLElement;
+    onMount(() => {
+        var prevScrollpos = window.pageYOffset;
+        function handleScroll() {
+            var currentScrollPos = window.pageYOffset;
+            if (window.pageYOffset > 250) {
+                isNav = true;
+            } else {
+                isNav = false;
+            }
+
+
+            if (window.pageYOffset < 250) return;
+            // Hide nav 
+            if (prevScrollpos > currentScrollPos) {
+                nav.style.transform = "translateY(0)";
+            } else {
+                nav.style.transform = "translateY(-100%)";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+        handleScroll()
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    });
 </script>
 
-<div class="fixed top-0 mx-auto w-full navbar shadow-lg bg-neutral text-neutral-content mb-0">
+<div
+    bind:this={nav}
+    class:bg-neutral-focus={isNav}
+    class="fixed top-0 transition-transform duration-300 mx-auto w-full navbar shadow-lg text-neutral-content mb-0 z-50"
+>
     <div class="container">
         <div class="flex-1 px-2 mx-2">
-            <a href="/" class="text-lg font-bold">
+            <a href="/" class="text-2xl font-bold">
                 Cr<span class="text-primary">is...</span>
             </a>
         </div>
@@ -63,19 +95,18 @@
             </button>
         </div>
     </div>
-  
 </div>
 
 {#if show}
     <div
-        on:click={()=> show = !show}
+        on:click={() => (show = !show)}
         transition:fade
-        class="z-10 cursor-pointer backdrop-filter backdrop-blur-sm fixed inset-0 bg-[hsla(0,0%,100%,.418)]"
+        class="z-[999] cursor-pointer backdrop-filter backdrop-blur-sm fixed inset-0 bg-[hsla(0,0%,100%,.418)]"
     />
 
     <div
-      transition:fly={{x: 245}}
-        class="z-20 fixed top-0 right-0 h-screen w-[245px] bg-base-200 shadow-2xl"
+        transition:fly={{ x: 245 }}
+        class="z-[1000] fixed top-0 right-0 h-screen w-[245px] bg-base-200 shadow-2xl"
     >
         <ul>
             {#each navigations as nav}

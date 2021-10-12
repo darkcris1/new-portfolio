@@ -1,7 +1,12 @@
 <script lang="ts">
+import { fade } from "svelte/transition";
+
+    import { send, receive, headerKey } from "../common/crossafade"
     export let title: string = ""
     export let description: string = ""
     export let bg: string = "https://crisfandino.ml/assets/fr.png"
+    let container: HTMLElement;
+
 </script>
 
 
@@ -11,18 +16,21 @@
         background-size: 100% 100%;
         background-attachment: fixed;
     }
+
 </style>
 
 <header 
     style={`--url: url(${bg})`} 
     class="md:px-32 px-5  pt-56 pb-36 bg-base-200 sm:text-left text-center bg-center">
-    <div class="container">
-        <h1 class="text-5xl w-[fit-content] text-white">
+    <div class="container ">
+        <h1     
+            class="text-5xl w-[fit-content] text-white">
             {title}
             <div style="" class="mt-2 w-[110%] bg-gray-200 h-[1px]">
             </div>
         </h1>
-        <p class="mt-2 text-white">{description}</p>
+        <p 
+            class="mt-2 text-white">{description}</p>
         <slot></slot>
     </div>
  

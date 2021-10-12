@@ -21,7 +21,7 @@
     <h3 on:click={reverse} class="text-primary text-2xl text-center cursor-pointer">{title}</h3>
     <ul>
         {#each config as c (c)}
-            <li animate:flip class="my-5">
+            <li animate:flip class="my-5 cursor-pointer">
                 <h4 class="text-primary uppercase">{c.title}</h4>
                 <div class="border h-10 w-full border-primary rounded-box shadow-lg">
                     <div 
