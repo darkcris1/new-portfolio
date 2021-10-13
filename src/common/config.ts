@@ -2,8 +2,14 @@ export const LANGUAGES = {
 
 }
 
+function addActiveProp(array: any[]){
+    return array.map((obj)=>{
+        obj.active = false;
+        return obj;
+    })  
+}
 
-const LANGUAGES_INDEX = [
+const LANGUAGES_INDEX = addActiveProp([
     {
         bg: "orange",
         percent: 96,
@@ -29,8 +35,8 @@ const LANGUAGES_INDEX = [
         docsite: "https://docs.python.org/3/"
     },
     
-];
-const FRAMEWORK_INDEX = [
+]);
+const FRAMEWORK_INDEX = addActiveProp([
     {
         bg: "green",
         percent: 90,
@@ -53,9 +59,9 @@ const FRAMEWORK_INDEX = [
         bg: "linear-gradient(171deg, #ff0100, hsl(0,100%,40%))",
         percent: 70,
         title: "Angular",
-        docsite: "https://kit.svelte.dev/"
+        docsite: "https://angular.io/"
     },
-];
+]);
 
 export const WORK_CONFIGS = [
     { title: "Languages", config: LANGUAGES_INDEX },
