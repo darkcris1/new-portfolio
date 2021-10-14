@@ -14,19 +14,19 @@ const LANGUAGES_INDEX = addActiveProp([
         bg: "orange",
         percent: 96,
         title: "html",
-        docsite: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        docsite: "https://html.com/"
     },
     {
         bg: "linear-gradient(171deg, rgb(30, 46, 243), rgb(220, 0, 251))",
         percent: 90,
         title: "CSS/SASS",
-        docsite: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        docsite: "https://sass-lang.com/"
     },
     {
         bg: "linear-gradient(171deg, rgb(247, 255, 35), rgb(73, 220, 40))",
         percent: 80,
         title: "Javascript/Node",
-        docsite: "https://developer.mozilla.org/en-US/docs/Web/javascript"
+        docsite: "https://nodejs.org/en/"
     },
     {
         bg: "linear-gradient(to right, #3d6998,  #ffd43b)",
@@ -41,7 +41,7 @@ const FRAMEWORK_INDEX = addActiveProp([
         bg: "green",
         percent: 90,
         title: "Django",
-        docsite: "https://docs.djangoproject.com/en/3.2/"
+        docsite: "https://www.djangoproject.com/start/overview/"
     },
     {
         bg: "linear-gradient(171deg, rgb(120, 225, 243), rgba(0, 0, 0, 0.7))",
