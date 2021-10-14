@@ -78,10 +78,8 @@
     <div 
         in:send|local={{key: "docsite1" }}
         out:receive|local={{key: "docsite2"}} 
-        class="bg-base-100 shadow-md rounded-box overflow-hidden max-w-[100vw]" style="height: 90vh; width: 800px">
-        <h2
-            class="text-2xl text-center py-5 uppercase"
-            >{currentActive.title}</h2>
+        class="shadow-md rounded-box overflow-hidden max-w-[90%] max-h-[90%]" style="height: 600px; width: 800px">
+
       <iframe 
         class="h-full w-full"
         title="My Resume" 
