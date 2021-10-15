@@ -40,7 +40,8 @@
 
       seviceHeight = getComputedStyle(serviceEl).height
     }
-    
+    let gDriveResume = `https://drive.google.com/u/0/uc?id=1GhRvrLb3uc1p6IWcZY-R1lUgGJaUQTfK&export=download`;
+    let resumeViewer = `https://view.officeapps.live.com/op/embed.aspx?src=${gDriveResume}`
 </script>
 
 
@@ -58,10 +59,13 @@
 
 <Modal show={showCV} toggler={toggleShowCv}>
   <div in:send={{key: "btn1"}} out:receive={{key: "btn2"}} class="shadow-md rounded-box overflow-hidden max-w-[90%] max-h-[90%]" style="height: 600px; width: 800px">
+    <div class="flex flex-row-reverse py-5">
+      <a class="btn btn-primary" href={gDriveResume} target="_blank" ><i class="fas fa-download mr-2"></i> Download CV</a>
+    </div>
     <iframe 
     class="h-full w-full"
       title="My Resume" 
-      src={`https://view.officeapps.live.com/op/embed.aspx?src=https://drive.google.com/u/0/uc?id=1GhRvrLb3uc1p6IWcZY-R1lUgGJaUQTfK&export=download` } frameborder="0"></iframe>
+      src={resumeViewer} frameborder="0"></iframe>
   </div>
 </Modal>
 
@@ -196,9 +200,9 @@
     </div>
 </section>
 
-<section class="py-14 px-5 text-center bg-primary text-primary-content">
+<section class="py-14 px-5 text-center bg-primary">
     <div class="container grid grid-cols-1 md:grid-cols-2 glass rounded-lg">
-        <div class="flex items-center justify-center flex-col px-5">
+        <div class="flex items-center justify-center flex-col p-5 text-primary-content">
             <h2 class="font-bold text-xl">I am happy to hear if you are interested of my works</h2>
             <p class="my-10">You can contact me anytime via this form, make sure your email is correct so I can get in touch to you immediately after I received the mails.</p>
 
@@ -213,25 +217,25 @@
             </div>
         </div>
         <!-- svelte-ignore a11y-label-has-associated-control -->
-        <form action="" class="w-full p-5 flex flex-col gap-y-5">
-            <h2 class="text-3xl mb-5">Contact</h2>
+        <form novalidate action="" class="w-full p-5 flex flex-col gap-y-5">
+            <h2 class="text-3xl mb-5  text-primary-content">Contact</h2>
             <div class="form-control">
               <label class="label">
                   <span class="label-text text-primary-content">Name</span>
                 </label> 
-                <input type="text" placeholder="username" class="input input-primary input-bordered">
+                <input type="text" placeholder="Name" class="input input-primary input-bordered">
             </div> 
             <div class="form-control">
                 <label class="label">
                   <span class="label-text text-primary-content">Email</span>
                 </label> 
-                <input type="text" placeholder="username" class="input input-primary input-bordered">
+                <input type="email" placeholder="Email" class="input input-primary input-bordered">
             </div> 
             <div class="form-control">
                 <label class="label">
                   <span class="label-text text-primary-content">Messages</span>
                 </label> 
-                <textarea rows="7"  class="textarea textarea-bordered border-primary" placeholder="Messages..."></textarea>
+                <textarea rows="7"  class="resize-none textarea textarea-bordered border-primary" placeholder="Messages..."></textarea>
             </div>
             <button class="btn btn-primary self-center mt-5 w-52 max-w-full glass" type="submit">
               Send <i class="ml-2 fas fa-location-arrow rotate-45"></i>
@@ -242,7 +246,7 @@
 
 
 
-<footer class="bg-neutral text-neutral-content items-center p-4 footer">
+<footer class="bg-neutral text-neutral-content items-center p-4">
   <div class="container text-center text-lg">
     <p class="mx-auto">
       Copyright © 2021 - All right reserved
