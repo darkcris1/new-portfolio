@@ -22,6 +22,7 @@
     import Modal from "../components/Modal.svelte";
     import { tweened } from "svelte/motion";
     import Contact from "../components/Contact.svelte";
+    import Seo from "$src/components/SEO.svelte";
 
     export let githubData;
 
@@ -62,6 +63,11 @@
     let resumeViewer = `https://view.officeapps.live.com/op/embed.aspx?src=${gDriveResume}`;
 </script>
 
+<Seo 
+    title="Home - Portfolio" 
+    description="Hi I am cris this is my personal portfolio"
+    image="/assets/my-picture-transparent.png"
+    />
 <PageHeader
     title="Hey! I am Cris."
     description="I create custom websites to help businesses to their standards"
@@ -75,7 +81,7 @@
                 class="btn btn-sm btn-primary mr-2">View CV</button
             >
         {/if}
-        <button class="btn btn-sm btn-primary">Get In Touch</button>
+        <a href="/contact" class="btn btn-sm btn-primary">Get In Touch</a>
     </div>
 </PageHeader>
 

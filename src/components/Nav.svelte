@@ -28,14 +28,14 @@
         var prevScrollpos = window.pageYOffset;
         function handleScroll() {
             var currentScrollPos = window.pageYOffset;
-            if (window.pageYOffset > 250) {
+            if (window.pageYOffset > 150) {
                 isNav = true;
             } else {
                 isNav = false;
             }
 
 
-            if (window.pageYOffset < 250) return;
+            if (window.pageYOffset < 150) return;
             // Hide nav 
             if (prevScrollpos > currentScrollPos) {
                 nav.style.transform = "translateY(0)";
@@ -67,7 +67,7 @@
                     <a
                         href={nav.href}
                         class:bg-primary={$page.path === nav.href}
-                        class="btn btn-ghost btn-sm rounded-btn"
+                        class="mx-2 btn btn-ghost btn-sm rounded-btn"
                     >
                         {nav.text}
                     </a>

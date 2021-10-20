@@ -78,7 +78,7 @@
     <div 
         in:send|local={{key: "docsite1" }}
         out:receive|local={{key: "docsite2"}} 
-        class="shadow-md rounded-box overflow-hidden max-w-[90%] max-h-[90%]" style="height: 600px; width: 800px">
+        class="shadow-md bg-base-100 rounded-box overflow-hidden max-w-[90%] max-h-[90%]" style="height: 600px; width: 800px">
 
       <iframe 
         class="h-full w-full"

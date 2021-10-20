@@ -24,9 +24,9 @@ import { fade } from "svelte/transition";
     class="md:px-32 px-5  pt-56 pb-36 bg-base-200 sm:text-left text-center bg-center">
     <div class="container ">
         <h1     
-            class="text-5xl w-[fit-content] text-white">
+            class="text-5xl w-[fit-content] text-white mx-auto sm:mx-0">
             {title}
-            <div style="" class="mt-2 w-[110%] bg-gray-200 h-[1px]">
+            <div class="mt-2 w-[110%] bg-gray-200 h-[1px]">
             </div>
         </h1>
         <p 
